@@ -25,3 +25,5 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm publish --access public --provenance
+        env:
+          RELEASE_MODE: 'true'
