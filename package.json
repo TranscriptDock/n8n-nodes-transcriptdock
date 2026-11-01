@@ -1,0 +1,52 @@
+{
+  "name": "n8n-nodes-transcriptdock",
+  "version": "0.1.0",
+  "description": "Video transcription jobs and timed transcripts from Transcript Dock",
+  "license": "MIT",
+  "homepage": "https://www.transcriptdock.com/docs",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "author": {
+    "name": "Transcript Dock",
+    "email": "transcriptdock@volods.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TranscriptDock/n8n-nodes-transcriptdock.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease",
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/TranscriptDockApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/TranscriptDock/TranscriptDock.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.54.6",
+    "typescript": "5.9.3",
+    "n8n-workflow": "2.16.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}
