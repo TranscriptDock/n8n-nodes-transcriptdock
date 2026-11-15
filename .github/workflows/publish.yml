@@ -20,6 +20,7 @@ jobs:
           node-version: '24.15.0'
           registry-url: https://registry.npmjs.org
           cache: npm
+      - run: npm install --global npm@11.21.2
       - run: npm ci --ignore-scripts
       - run: npm run build
       - run: npm run lint
