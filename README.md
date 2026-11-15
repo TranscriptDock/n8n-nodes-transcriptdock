@@ -4,7 +4,7 @@ Submit video transcription jobs and retrieve timed transcripts with your own Tra
 
 ## Status
 
-In development. Not published to npm or verified by n8n yet. No live transcription request has been executed as part of these local checks.
+Community node with n8n directory verification still pending. The automated checks use local fixtures; they do not establish successful production transcription or complete editor validation.
 
 ## Credentials
 
@@ -17,7 +17,7 @@ Create a key at https://www.transcriptdock.com/dashboard/developer and save it i
 * **Get Transcript** retrieves text and timed segments using a successful job's `result_id`.
 * **Get Capabilities** checks the platforms and modes available to your account.
 
-Captions Only is the default and costs 1 credit for YouTube or TikTok captions. Auto allows AI fallback. Transcribe requests AI directly. AI transcription requires a paid Transcript Dock plan and costs 2 credits per started minute. Instagram Reels use AI transcription on paid plans in beta. The maximum credits field caps AI spend; its default of 1 deliberately cannot pay for one AI minute. Increase it explicitly before choosing AI.
+Captions Only is the default and costs 1 credit for YouTube or TikTok captions. Auto allows AI fallback. Transcribe requests AI directly. AI transcription requires a paid Transcript Dock plan. Check the [pricing page](https://www.transcriptdock.com/pricing) for current transcription and source charges. Instagram Reels use AI transcription on paid plans in beta. The maximum credits field caps the request's spend; its default of 1 deliberately cannot pay for one AI minute. Increase it explicitly before choosing AI.
 
 Set an idempotency key of 8 to 128 printable ASCII characters for each logical submission. Keep that key and the input unchanged on retries. A key derived only from a video URL will reuse the existing submission even on a later workflow run. A key derived from an execution ID is new on a new execution. For recovery across executions, use a persistent business event ID instead. Do not enable automatic retries with a changing key.
 
